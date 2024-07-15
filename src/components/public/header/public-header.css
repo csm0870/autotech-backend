@@ -1,0 +1,32 @@
+.public-header nav ul {
+    list-style-type: none;
+    font-size: 20px;
+    margin-bottom: 40px;
+    font-weight: 300;
+    text-align: right;
+}
+
+.public-header nav ul li {
+    display: inline-block;
+    margin-right: 34px;
+}
+
+.public-header nav ul li a {
+    position: relative;
+    text-decoration: none;
+    color: #000000;
+}
+
+.public-header nav ul li a:hover .underline, .public-header nav ul li a.active .underline {
+    display: block;
+}
+
+.public-header nav ul li a .underline {
+    height: 3.5px;
+    background-color: #171717;
+    display: none;
+    width: 30px;
+    position: absolute;
+    bottom: -2px;
+    right: 0;
+}
