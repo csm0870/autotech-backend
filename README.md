@@ -1,2 +1,2 @@
-# autotech-backend
-Állásbörze app backend
+# autotech-frontend
+Állásbörze react frontend
