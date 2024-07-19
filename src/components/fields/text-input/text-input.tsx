@@ -23,7 +23,8 @@ export const TextInput = ({ defaultValue, placeholder, error, onChange, required
         <>
             <input
                 className="text-input"
-                type="text" value={value}
+                type="text"
+                value={value}
                 placeholder={required ? `*${placeholder}` : placeholder}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleChange(e)}
                 required={required}
@@ -31,7 +32,7 @@ export const TextInput = ({ defaultValue, placeholder, error, onChange, required
             />
             {
                 error !== undefined && (
-                    <div className="control-error">
+                    <div className="text-input-control-error">
                         {error}
                     </div>
                 )
