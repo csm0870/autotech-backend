@@ -19,6 +19,8 @@ export const EmailInput = ({ defaultValue, placeholder, error, onChange, require
         if(onChange !== undefined) onChange(e.target.value);
     };
 
+    const hasError = (error === undefined || error === '') ? false : true;
+
     return (
         <>
             <input
@@ -31,7 +33,7 @@ export const EmailInput = ({ defaultValue, placeholder, error, onChange, require
                 disabled={disabled}
             />
             {
-                error !== undefined && (
+                hasError && (
                     <div className="email-input-control-error">
                         {error}
                     </div>

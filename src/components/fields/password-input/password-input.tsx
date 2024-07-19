@@ -19,6 +19,8 @@ export const PasswordInput = ({ defaultValue, placeholder, error, onChange, requ
         if(onChange !== undefined) onChange(e.target.value);
     };
 
+    const hasError = (error === undefined || error === '') ? false : true;
+
     return (
         <>
             <input
@@ -31,7 +33,7 @@ export const PasswordInput = ({ defaultValue, placeholder, error, onChange, requ
                 disabled={disabled}
             />
             {
-                error !== undefined && (
+                hasError && (
                     <div className="password-input-control-error">
                         {error}
                     </div>

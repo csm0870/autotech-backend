@@ -19,6 +19,8 @@ export const TextInput = ({ defaultValue, placeholder, error, onChange, required
         if(onChange !== undefined) onChange(e.target.value);
     };
 
+    const hasError = (error === undefined || error === '') ? false : true;
+
     return (
         <>
             <input
@@ -31,7 +33,7 @@ export const TextInput = ({ defaultValue, placeholder, error, onChange, required
                 disabled={disabled}
             />
             {
-                error !== undefined && (
+                hasError && (
                     <div className="text-input-control-error">
                         {error}
                     </div>
