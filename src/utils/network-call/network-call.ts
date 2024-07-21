@@ -74,7 +74,7 @@ export const networkCall = async <ResponseDataType>(endpoint: string, config?: N
 
     try {
 
-        return await axios({
+        return await axios<ResponseDataType>({
             url: `${process.env.REACT_APP_BACKEND_URL}${endpoint}`,
             method: config.method,
             headers,
