@@ -1,13 +1,13 @@
 import axios, { AxiosError, AxiosResponse, RawAxiosRequestHeaders } from "axios";
 
-export type NetworkCallConfig = {
+type NetworkCallConfig = {
     method?: 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE';
     requestBodyType?: 'JSON' | 'SIMPLE_FORM' | 'FILE_FORM';
     body?: any;
     params?: { [index: string]: string | undefined };
 };
 
-export const networkCall = async <ResponseDataType>(endpoint: string, config?: NetworkCallConfig): Promise<AxiosResponse<ResponseDataType> | undefined> => {
+export const networkCall = async (endpoint: string, config?: NetworkCallConfig): Promise<AxiosResponse | undefined> => {
     const defaultConfig: NetworkCallConfig = {
         method: 'GET',
         requestBodyType: 'JSON',
@@ -74,7 +74,7 @@ export const networkCall = async <ResponseDataType>(endpoint: string, config?: N
 
     try {
 
-        return await axios<ResponseDataType>({
+        return await axios({
             url: `${process.env.REACT_APP_BACKEND_URL}${endpoint}`,
             method: config.method,
             headers,
@@ -84,7 +84,7 @@ export const networkCall = async <ResponseDataType>(endpoint: string, config?: N
         });
 
     } catch (error: unknown) {
-        return (error as AxiosError<ResponseDataType>).response;
+        return (error as AxiosError).response;
     }
 
 }
