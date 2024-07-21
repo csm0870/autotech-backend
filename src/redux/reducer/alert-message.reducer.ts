@@ -1,9 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-export interface AlertMessageState {
+type AlertMessageType = 'success' | 'error' | 'warning' | 'info';
+
+type AlertMessageState = {
     alertMessageText: string | null;
-    alertMessageType?: 'success' | 'error' | 'warning' | 'info';
-    visible?: boolean;
+    alertMessageType: AlertMessageType;
+    visible: boolean;
 }
 
 const initialState: AlertMessageState = {
@@ -19,7 +21,7 @@ export const alertMessageSlice = createSlice({
         hideAlertMessage: (state) => {
             state.visible = false;
         },
-        showAlertMessage: (state, action: PayloadAction<AlertMessageState>) => {
+        showAlertMessage: (state, action: PayloadAction<{ alertMessageText: string, alertMessageType?: AlertMessageType }>) => {
             state.visible = true;
             state.alertMessageText = action.payload.alertMessageText;
             state.alertMessageType = action.payload.alertMessageType ?? 'success';
