@@ -15,6 +15,7 @@ import { GroupEnum } from "../../../constant/enum/group.enum";
 import { useNavigate } from "react-router-dom";
 import { DefaultErrorResponse } from "../../../constant/type/api/error/default-error-response/default-error-respose.type";
 import { ValidationErrorResponseData } from "../../../constant/type/api/error/validation-error-response-data/validation-error-response-data.type.";
+import { login } from "../../../redux/reducer/session.reducer";
 
 export const Login = () => {
     const dispatch = useDispatch();
@@ -105,17 +106,33 @@ export const Login = () => {
 
                 switch(res.data.user.group.name.toLowerCase()) {
                     case GroupEnum.Admin:
+                        dispatch(login({
+                            user: res.data.user,
+                            token: res.data.accessToken
+                        }));
                         navigate('/cms/admin');
-                        break;
+                        return;
                     case GroupEnum.Organizer:
+                        dispatch(login({
+                            user: res.data.user,
+                            token: res.data.accessToken
+                        }));
                         navigate('/cms/organizer');
-                        break;
+                        return;
                     case GroupEnum.Employer:
+                        dispatch(login({
+                            user: res.data.user,
+                            token: res.data.accessToken
+                        }));
                         navigate('/cms/employer');
-                        break;
+                        return;
                     case GroupEnum.JobSeeker:
+                        dispatch(login({
+                            user: res.data.user,
+                            token: res.data.accessToken
+                        }));
                         navigate('/cms/job-seeker');
-                        break;
+                        return;
                     default:
                         alertMessage.alertMessageText = 'Hibás email cím vagy jelszó.';
 
