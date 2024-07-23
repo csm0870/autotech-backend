@@ -13,7 +13,7 @@ export const PublicHeader = () => {
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/registration-open">
+                        <NavLink to="/registration-chooser">
                             Regisztráció
                             <span className='underline'></span>
                         </NavLink>

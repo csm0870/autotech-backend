@@ -1,0 +1,46 @@
+.registration-chooser-container {
+    margin-bottom: 150px;
+}
+
+@media(max-width: 768px) {
+    .registration-chooser-container {
+        margin-bottom: 0;
+    }
+}
+
+.legy-reszese-a-vr-bo {
+    color: #000000;
+    font-size: 42px;
+    font-weight: bold;
+    letter-spacing: -0.53px;
+    line-height: 52px;
+    margin-bottom: 20px;
+}
+
+.kerlek-valassz-hogy {
+    color: #000000;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: -0.25px;
+    line-height: 24px;
+    margin-bottom: 150px;
+}
+
+.registration-link-container {
+    border: 1px solid #000000;
+    height: 400px;
+    font-size: 20px;
+    cursor: pointer;
+    position: relative;
+    letter-spacing: -0.25px;
+    line-height: 24px;
+    margin-bottom: 30px;
+}
+
+.registration-link-container span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
