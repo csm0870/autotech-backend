@@ -1,7 +1,7 @@
 import { useState } from "react";
-import './password-input.css';
+import './text-area.css';
 
-type PasswordInputProps = {
+type TextAreaProps = {
     defaultValue?: string | null;
     placeholder?: string;
     error?: string;
@@ -10,11 +10,11 @@ type PasswordInputProps = {
     onChange?: (value: string) => void;
 }
 
-export const PasswordInput = ({ defaultValue, placeholder, error, onChange, required, disabled }: PasswordInputProps) => {
+export const Textarea = ({ defaultValue, placeholder, error, onChange, required, disabled }: TextAreaProps) => {
 
     const [value, setValue] = useState(defaultValue ?? '');
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         setValue(e.target.value);
         if(onChange !== undefined) onChange(e.target.value);
     };
@@ -23,18 +23,17 @@ export const PasswordInput = ({ defaultValue, placeholder, error, onChange, requ
 
     return (
         <>
-            <input
-                className="password-input"
-                type="password"
+            <textarea
+                className="textarea"
                 value={value}
                 placeholder={required ? `*${placeholder}` : placeholder}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleChange(e)}
+                onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => handleChange(e)}
                 required={required}
                 disabled={disabled}
-            />
+            ></textarea>
             {
                 hasError && (
-                    <div className="password-input-control-error">
+                    <div className="textarea-control-error">
                         {error}
                     </div>
                 )

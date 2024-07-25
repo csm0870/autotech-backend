@@ -2,7 +2,7 @@ import { useState } from "react";
 import './text-input.css';
 
 type TextInputProps = {
-    defaultValue?: string;
+    defaultValue?: string | null;
     placeholder?: string;
     error?: string;
     required?: boolean;

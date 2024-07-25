@@ -2,7 +2,7 @@ import { useState } from "react";
 import './email-input.css';
 
 type EmailInputProps = {
-    defaultValue?: string;
+    defaultValue?: string | null;
     placeholder?: string;
     error?: string;
     required?: boolean;
