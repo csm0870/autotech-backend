@@ -40,9 +40,15 @@ export const Login = () => {
     };
 
     const validateForm = () => {
-        dispatch(hideAlertMessage());
-        let valid = true;
         const newForm = JSON.parse(JSON.stringify(form));
+
+        // clear errors
+        dispatch(hideAlertMessage());
+        for (const key in newForm) {
+            newForm[key].error = '';
+        }
+
+        let valid = true;
         for (const key in newForm) {
             if(newForm[key].value === '') {
                 newForm[key].error = 'Mező kitöltése kötelező.';
@@ -70,14 +76,6 @@ export const Login = () => {
         }
 
         return true;
-    };
-
-    const clearErrors = () => {
-        const newForm = JSON.parse(JSON.stringify(form));
-        for (const key in newForm) {
-            newForm[key].error = '';
-        }
-        setForm(newForm);
     };
 
     const handleLogin = async () => {
@@ -199,7 +197,6 @@ export const Login = () => {
                     <AlertMessage />
 
                     <EmailInput
-                        defaultValue={form.email.value}
                         error={form.email.error}
                         placeholder="Email cím"
                         required
@@ -213,7 +210,6 @@ export const Login = () => {
 
                 <Col xs="12" md="6" style={{marginTop: "20px"}}>
                     <PasswordInput
-                        defaultValue={form.password.value}
                         error={form.password.error}
                         placeholder="Jelszó"
                         required
