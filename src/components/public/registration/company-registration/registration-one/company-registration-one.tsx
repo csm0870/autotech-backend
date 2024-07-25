@@ -15,6 +15,7 @@ import { useNavigate } from "react-router-dom";
 import { networkCall } from "../../../../../utils/network-call/network-call";
 import { showDefaultErrorMessages } from "../../../../../utils/show-default-error-message/show-default-error-messages";
 import { AxiosResponse } from "axios";
+import { ProcessCircles } from "../../../process-circles/process-circles";
 
 export const CompanyRegistrationOne = () => {
     const { companyRegistrationData } = useSelector((state: RootState) => state.registration);
@@ -322,12 +323,7 @@ export const CompanyRegistrationOne = () => {
                         />
                     </div>
 
-                    <div className="process-circles">
-                        <span></span>
-                        <span className="active"></span>
-                        <span></span>
-                        <span></span>
-                    </div>
+                    <ProcessCircles countOfCircles={4} activeCircle={1} style={{ marginTop: '250px', marginBottom: '30px' }} />
 
                 </Col>
 

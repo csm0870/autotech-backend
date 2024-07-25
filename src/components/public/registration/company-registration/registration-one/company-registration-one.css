@@ -24,29 +24,6 @@
     line-height: 24px;
 }
 
-.company-registration-one .process-circles {
-    margin-top: 250px;
-    margin-bottom: 30px;
-    margin: 250px 0 30px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.company-registration-one .process-circles span {
-    border: 1px solid #979797;
-    border-radius: 50%;
-    height: 21px;
-    width: 21px;
-    margin-right: 30px;
-}
-
-.company-registration-one .process-circles span.active {
-    height: 42px;
-    width: 42px;
-    background-color: #D8D8D8;
-}
-
 .company-registration-one .button {
     width: 100%;
     padding: 15px 0 15px 0;
