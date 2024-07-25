@@ -4,6 +4,7 @@ import { Error } from '../components/error/error';
 import { PublicLayout } from '../layout/public/public-layout';
 import { Login } from '../components/public/login/login';
 import { RegistrationChooser } from '../components/public/registration/registration-chooser/registration-chooser';
+import { CompanyRegistrationOne } from '../components/public/registration/company-registration/registration-one/company-registration-one';
 
 
 export const router = createBrowserRouter([
@@ -26,6 +27,10 @@ export const router = createBrowserRouter([
                     {
                         path: 'registration-chooser',
                         element: <RegistrationChooser />
+                    },
+                    {
+                        path: 'company-registration-one',
+                        element: <CompanyRegistrationOne />
                     }
                 ]
             }
