@@ -60,7 +60,7 @@ export const CompanyRegistrationTwo = () => {
     };
 
 
-    const validateForm = async () => {
+    const validateForm = () => {
 
         // clear errors
         dispatch(hideAlertMessage());
@@ -143,7 +143,7 @@ export const CompanyRegistrationTwo = () => {
     };
 
     const handleNextClick = async () => {
-        if(!await validateForm()) return;
+        if(!validateForm()) return;
         
         dispatch(setCompanyRegistrationData({
             logo: form.logo.value,
