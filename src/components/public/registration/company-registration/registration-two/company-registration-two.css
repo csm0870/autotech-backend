@@ -1,0 +1,30 @@
+.company-registration-two .tovabbi-cegadatok {
+    color: #000000;
+    font-size: 42px;
+    font-weight: bold;
+    letter-spacing: -0.53px;
+    line-height: 52px;
+    margin-bottom: 20px;
+}
+
+.company-registration-two .kerlek-add-meg-az-el {
+    color: #000000;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: -0.25px;
+    line-height: 24px;
+}
+
+.company-registration-two .button {
+    width: 100%;
+    padding: 15px 0 15px 0;
+    background-color: #2A2A2A;
+    color: white;
+    font-size: 20px;
+}
+
+.company-registration-two .button.back-button {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+}

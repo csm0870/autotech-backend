@@ -10,8 +10,8 @@ type RegistrationState = {
         taxNumber: string | null;
         webSite: string | null;
         facebook: string | null;
-        logo: string | null;
-        gdpr: string | null;
+        logo: FileList | null;
+        gdpr: FileList | null;
         contactName: string | null;
         contactEmail: string | null;
         contactPhone: string | null;
@@ -51,8 +51,8 @@ export const registrationSlice = createSlice({
             taxNumber?: string | null;
             webSite?: string | null;
             facebook?: string | null;
-            logo?: string | null;
-            gdpr?: string | null;
+            logo?: FileList | null;
+            gdpr?: FileList | null;
             contactName?: string | null;
             contactEmail?: string | null;
             contactPhone?: string | null;

@@ -5,6 +5,7 @@ import { PublicLayout } from '../layout/public/public-layout';
 import { Login } from '../components/public/login/login';
 import { RegistrationChooser } from '../components/public/registration/registration-chooser/registration-chooser';
 import { CompanyRegistrationOne } from '../components/public/registration/company-registration/registration-one/company-registration-one';
+import { CompanyRegistrationTwo } from '../components/public/registration/company-registration/registration-two/company-registration-two';
 
 
 export const router = createBrowserRouter([
@@ -31,6 +32,10 @@ export const router = createBrowserRouter([
                     {
                         path: 'company-registration-one',
                         element: <CompanyRegistrationOne />
+                    },
+                    {
+                        path: 'company-registration-two',
+                        element: <CompanyRegistrationTwo />
                     }
                 ]
             }
