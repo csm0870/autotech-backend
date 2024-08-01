@@ -142,7 +142,7 @@ export const CompanyRegistrationTwo = () => {
         return true;
     };
 
-    const handleNextClick = async () => {
+    const handleNextClick = () => {
         if(!validateForm()) return;
         
         dispatch(setCompanyRegistrationData({
