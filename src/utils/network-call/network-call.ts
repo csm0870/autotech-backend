@@ -54,7 +54,7 @@ export const networkCall = async (endpoint: string, config?: NetworkCallConfig):
             for (const key in config.body) {
                 if (config.body.hasOwnProperty(key)) {
 
-                    if (typeof config.body[key] === 'object' && typeof config.body[key][Symbol.iterator] === 'function') { //Fájl vagy tömb esetén
+                    if (config.body[key] !== null && typeof config.body[key] === 'object' && typeof config.body[key][Symbol.iterator] === 'function') { //Fájl vagy tömb esetén
 
                         for (let index = 0; index < config.body[key].length; index++) {
                             formData.append(key, config.body[key][index]);
