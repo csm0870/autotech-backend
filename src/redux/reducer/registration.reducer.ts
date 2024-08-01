@@ -16,6 +16,11 @@ type RegistrationState = {
         contactEmail: string | null;
         contactPhone: string | null;
         contactPosition: string | null;
+    };
+    jobSeekerRegistrationData: {
+        lastName: string | null;
+        firstName: string | null;
+        email: string | null;
     }
 }
 
@@ -35,6 +40,11 @@ const initialState: RegistrationState = {
         contactEmail: null,
         contactPhone: null,
         contactPosition: null
+    },
+    jobSeekerRegistrationData: {
+        lastName: null,
+        firstName: null,
+        email: null
     }
 }
 
@@ -80,6 +90,17 @@ export const registrationSlice = createSlice({
             state.companyRegistrationData.contactEmail = null;
             state.companyRegistrationData.contactPhone = null;
             state.companyRegistrationData.contactPosition = null;
+        },
+
+        setJobSeekerRegistrationData: (state, action: PayloadAction<{
+            lastName?: string | null;
+            firstName?: string | null;
+            email?: string | null;
+        }>) => {
+            state.jobSeekerRegistrationData = {
+                ...state.jobSeekerRegistrationData,
+                ...action.payload
+            };
         }
 
     }
@@ -87,5 +108,6 @@ export const registrationSlice = createSlice({
 
 export const {
     setCompanyRegistrationData,
-    resetCompanyRegistrationData
+    resetCompanyRegistrationData,
+    setJobSeekerRegistrationData
 } = registrationSlice.actions;

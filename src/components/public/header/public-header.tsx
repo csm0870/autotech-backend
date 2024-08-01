@@ -10,9 +10,13 @@ export const PublicHeader = () => {
 
         if([
             '/registration-chooser',
+
             '/company-registration-one',
             '/company-registration-two',
-            '/company-registration-three'
+            '/company-registration-three',
+
+            '/job-seeker-registration-one'
+
         ].includes(location.pathname)) {
             setActiveNavItem('registration');
         } else if (location.pathname === '/login') {
