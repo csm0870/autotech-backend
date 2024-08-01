@@ -42,6 +42,7 @@ export const registrationSlice = createSlice({
     name: 'registration',
     initialState,
     reducers: {
+
         setCompanyRegistrationData: (state, action: PayloadAction<{
             email?: string | null;
             password?: string | null;
@@ -62,10 +63,29 @@ export const registrationSlice = createSlice({
                 ...state.companyRegistrationData,
                 ...action.payload
             };
+        },
+
+        resetCompanyRegistrationData(state) {
+            state.companyRegistrationData.email = null;
+            state.companyRegistrationData.password = null;
+            state.companyRegistrationData.name = null;
+            state.companyRegistrationData.shortDescription = null;
+            state.companyRegistrationData.headquarters = null;
+            state.companyRegistrationData.taxNumber = null;
+            state.companyRegistrationData.webSite = null;
+            state.companyRegistrationData.facebook = null;
+            state.companyRegistrationData.logo = null;
+            state.companyRegistrationData.gdpr = null;
+            state.companyRegistrationData.contactName = null;
+            state.companyRegistrationData.contactEmail = null;
+            state.companyRegistrationData.contactPhone = null;
+            state.companyRegistrationData.contactPosition = null;
         }
+
     }
 });
 
 export const {
-    setCompanyRegistrationData
+    setCompanyRegistrationData,
+    resetCompanyRegistrationData
 } = registrationSlice.actions;
