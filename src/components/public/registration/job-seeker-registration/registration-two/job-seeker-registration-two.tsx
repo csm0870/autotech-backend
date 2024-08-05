@@ -2,16 +2,11 @@ import { Col, Container, Row } from "reactstrap";
 import './job-seeker-registration-two.css';
 import { AlertMessage } from "../../../../alert-message/alert-message";
 import { ProcessCircles } from "../../../process-circles/process-circles";
-import { TextInput } from "../../../../fields/text-input/text-input";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../../../redux/store";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { hideAlertMessage, showAlertMessage } from "../../../../../redux/reducer/alert-message.reducer";
-import { isValidEmail } from "../../../../../utils/is-valid-email/is-valid-email";
-import { networkCall } from "../../../../../utils/network-call/network-call";
-import { showDefaultErrorMessages } from "../../../../../utils/show-default-error-message/show-default-error-messages";
-import { AxiosResponse } from "axios";
 import { setJobSeekerRegistrationData } from "../../../../../redux/reducer/registration.reducer";
 import { PasswordInput } from "../../../../fields/password-input/password-input";
 
