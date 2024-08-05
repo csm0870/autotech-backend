@@ -21,6 +21,7 @@ type RegistrationState = {
         lastName: string | null;
         firstName: string | null;
         email: string | null;
+        password: string | null;
     }
 }
 
@@ -44,7 +45,8 @@ const initialState: RegistrationState = {
     jobSeekerRegistrationData: {
         lastName: null,
         firstName: null,
-        email: null
+        email: null,
+        password: null
     }
 }
 
@@ -96,6 +98,7 @@ export const registrationSlice = createSlice({
             lastName?: string | null;
             firstName?: string | null;
             email?: string | null;
+            password?: string | null;
         }>) => {
             state.jobSeekerRegistrationData = {
                 ...state.jobSeekerRegistrationData,

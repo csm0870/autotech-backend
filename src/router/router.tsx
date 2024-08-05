@@ -8,6 +8,7 @@ import { CompanyRegistrationOne } from '../components/public/registration/compan
 import { CompanyRegistrationTwo } from '../components/public/registration/company-registration/registration-two/company-registration-two';
 import { CompanyRegistrationThree } from '../components/public/registration/company-registration/registration-three/company-registration-three';
 import { JobSeekerRegistrationOne } from '../components/public/registration/job-seeker-registration/registration-one/job-seeker-registration-one';
+import { JobSeekerRegistrationTwo } from '../components/public/registration/job-seeker-registration/registration-two/job-seeker-registration-two';
 
 
 export const router = createBrowserRouter([
@@ -46,6 +47,10 @@ export const router = createBrowserRouter([
                     {
                         path: 'job-seeker-registration-one',
                         element: <JobSeekerRegistrationOne />
+                    },
+                    {
+                        path: 'job-seeker-registration-two',
+                        element: <JobSeekerRegistrationTwo />
                     }
                 ]
             }
